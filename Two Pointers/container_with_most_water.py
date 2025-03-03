@@ -1,12 +1,13 @@
-c = [1,8,6,2,5,4,8,3,7] #c short for container
-n,x = 0,0
-l,r = 0,len(c)-1 #n for minimum and x for maximum
-a = 0 #a for area
-while l <= r:
-    ta = min(c[l],c[r])*(r-l)
-    a = max(a,ta)
-    if(c[l] < c[r]):
-        l+=1
-    else:
-        r-=1
-print(a)
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        l,r = 0,len(height)-1
+        a = 0
+        while(l <= r):
+            ta = min(height[l],height[r])*(r-l)
+            if ta > a:
+                a = ta
+            if(height[l] < height[r]):
+                l+=1
+            else:
+                r-=1
+        return a
