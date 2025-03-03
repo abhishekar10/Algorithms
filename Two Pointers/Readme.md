@@ -99,3 +99,39 @@ Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We ret
 - **Calculates Sum Iteratively**: Computes the sum of `numbers[l]` and `numbers[r]` in each iteration.  
 - **Adjusts Pointers Efficiently**: Moves the left pointer right if the sum is too small and moves the right pointer left if the sum is too large.  
 - **Returns 1-Based Indices**: When a match is found, returns the indices as per the 1-based indexing requirement.  
+
+<h4>Three Sum</h4>
+<p>
+Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+
+Notice that the solution set must not contain duplicate triplets.
+
+ 
+
+Example 1:
+
+Input: nums = [-1,0,1,2,-1,-4]
+Output: [[-1,-1,2],[-1,0,1]]
+Explanation: 
+nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
+nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
+nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
+The distinct triplets are [-1,0,1] and [-1,-1,2].
+Notice that the order of the output and the order of the triplets does not matter.
+Example 2:
+
+Input: nums = [0,1,1]
+Output: []
+Explanation: The only possible triplet does not sum up to 0.
+Example 3:
+
+Input: nums = [0,0,0]
+Output: [[0,0,0]]
+Explanation: The only possible triplet sums up to 0.
+</p>
+
+<b>Solution:</b>
+- **Sorts the Input Array**: Sorting ensures efficient two-pointer traversal for finding triplets.  
+- **Iterates with a Fixed First Element**: Uses a loop to fix one number and then applies the two-pointer technique to find pairs that sum to zero.  
+- **Avoids Duplicates**: Skips over duplicate elements to prevent duplicate triplets in the result.  
+- **Uses Two Pointers for Efficient Searching**: Adjusts left (`l`) and right (`r`) pointers to find valid triplets without unnecessary iterations.  
