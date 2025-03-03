@@ -74,3 +74,28 @@ Since an empty string reads the same forward and backward, it is a palindrome.
 - **Filters Non-Alphanumeric Characters Twice**: Removes all non-alphanumeric characters separately for both the original and reversed strings.  
 - **Converts to Lowercase After Reversing**: Ensures case insensitivity by applying `.lower()` after reversing the string.  
 - **Checks for Palindrome**: Compares the processed string with its reversed version.  
+
+<h4>4. Two Sum - Sorted</h4>
+<p>
+Example 1:
+
+Input: numbers = [2,7,11,15], target = 9
+Output: [1,2]
+Explanation: The sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2. We return [1, 2].
+Example 2:
+
+Input: numbers = [2,3,4], target = 6
+Output: [1,3]
+Explanation: The sum of 2 and 4 is 6. Therefore index1 = 1, index2 = 3. We return [1, 3].
+Example 3:
+
+Input: numbers = [-1,0], target = -1
+Output: [1,2]
+Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2].
+</p>
+
+<b>Solution:</b>
+- **Uses Two Pointers Approach**: Maintains two pointers, one at the start (`l`) and one at the end (`r`) of the sorted array.  
+- **Calculates Sum Iteratively**: Computes the sum of `numbers[l]` and `numbers[r]` in each iteration.  
+- **Adjusts Pointers Efficiently**: Moves the left pointer right if the sum is too small and moves the right pointer left if the sum is too large.  
+- **Returns 1-Based Indices**: When a match is found, returns the indices as per the 1-based indexing requirement.  
