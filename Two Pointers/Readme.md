@@ -75,7 +75,7 @@ Since an empty string reads the same forward and backward, it is a palindrome.
 - **Converts to Lowercase After Reversing**: Ensures case insensitivity by applying `.lower()` after reversing the string.  
 - **Checks for Palindrome**: Compares the processed string with its reversed version.  
 
-<h4>4. Two Sum - Sorted</h4>
+<h4>5. Two Sum - Sorted</h4>
 <p>
 Example 1:
 
@@ -100,7 +100,7 @@ Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We ret
 - **Adjusts Pointers Efficiently**: Moves the left pointer right if the sum is too small and moves the right pointer left if the sum is too large.  
 - **Returns 1-Based Indices**: When a match is found, returns the indices as per the 1-based indexing requirement.  
 
-<h4>Three Sum</h4>
+<h4>4. Three Sum</h4>
 <p>
 Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 
@@ -135,3 +135,26 @@ Explanation: The only possible triplet sums up to 0.
 - **Iterates with a Fixed First Element**: Uses a loop to fix one number and then applies the two-pointer technique to find pairs that sum to zero.  
 - **Avoids Duplicates**: Skips over duplicate elements to prevent duplicate triplets in the result.  
 - **Uses Two Pointers for Efficient Searching**: Adjusts left (`l`) and right (`r`) pointers to find valid triplets without unnecessary iterations.  
+
+<h4></h4>
+<p>
+5. Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
+
+Example 1:
+
+
+Input: height = [0,1,0,2,1,0,1,3,2,1,2,1]
+Output: 6
+Explanation: The above elevation map (black section) is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped.
+Example 2:
+
+Input: height = [4,2,0,3,2,5]
+Output: 9
+</p>
+
+<b>Solution:</b>
+
+- **Uses Two Pointers Approach**: Maintains left (`l`) and right (`r`) pointers to traverse the height array efficiently.  
+- **Tracks Maximum Heights**: Keeps track of `lmax` and `rmax` to determine water trapped at each index.  
+- **Calculates Trapped Water Efficiently**: Adds the difference between `lmax`/`rmax` and the current height if water can be trapped.  
+- **Optimized O(n) Solution**: Avoids extra space by using a two-pointer approach instead of storing left and right max heights separately.  
