@@ -28,3 +28,33 @@ Explanation: In this case, no transactions are done and the max profit = 0.
 - **Calculates Maximum Profit**: Computes the difference between `prices[r]` and `prices[l]`, updating the profit if a higher value is found.  
 - **Adjusts Buying Point When Needed**: Moves `l` to `r` when a lower price is found, ensuring the best buy price is always chosen.  
 - **Optimized O(n) Solution**: Traverses the list once, making it efficient for large datasets. 
+
+<h4>2. Longest substring without repeating characters</h4>
+<p>
+Given a string s, find the length of the longest substring without duplicate characters.
+
+ 
+
+Example 1:
+
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+Example 2:
+
+Input: s = "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+Example 3:
+
+Input: s = "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3.
+Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+</p>
+
+<b>Solution Explanation:</b>
+- **Uses Sliding Window Approach**: Expands the right pointer (`r`) while adjusting the left pointer (`l`) to maintain a unique character set.  
+- **Utilizes a Set for Fast Lookups**: Stores characters in a set (`c`) to efficiently check for duplicates.  
+- **Dynamically Updates Maximum Length**: Updates `result` whenever a longer substring without repeating characters is found.  
+- **Optimized O(n) Time Complexity**: Each character is processed at most twice, making it efficient for large inputs.
