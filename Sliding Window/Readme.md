@@ -58,3 +58,28 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
 - **Utilizes a Set for Fast Lookups**: Stores characters in a set (`c`) to efficiently check for duplicates.  
 - **Dynamically Updates Maximum Length**: Updates `result` whenever a longer substring without repeating characters is found.  
 - **Optimized O(n) Time Complexity**: Each character is processed at most twice, making it efficient for large inputs.
+
+<h4>Maximum Average Subarray - I</h4>
+<p>
+You are given an integer array nums consisting of n elements, and an integer k.
+
+Find a contiguous subarray whose length is equal to k that has the maximum average value and return this value. Any answer with a calculation error less than 10-5 will be accepted.
+
+ 
+
+Example 1:
+
+Input: nums = [1,12,-5,-6,50,3], k = 4
+Output: 12.75000
+Explanation: Maximum average is (12 - 5 - 6 + 50) / 4 = 51 / 4 = 12.75
+Example 2:
+
+Input: nums = [5], k = 1
+Output: 5.00000
+</p>
+
+<b>Solution Explanation :</b>
+- **Uses Sliding Window Technique**: Maintains a window of size `k` and updates its sum dynamically.  
+- **Computes Initial Sum Efficiently**: Calculates the sum of the first `k` elements to start.  
+- **Optimizes by Sliding the Window**: Updates the sum by adding the next element and removing the first element of the previous window.  
+- **Runs in O(n) Time Complexity**: Traverses the array once, making it efficient for large inputs.  
