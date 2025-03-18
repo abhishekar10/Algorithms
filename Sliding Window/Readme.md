@@ -83,3 +83,31 @@ Output: 5.00000
 - **Computes Initial Sum Efficiently**: Calculates the sum of the first `k` elements to start.  
 - **Optimizes by Sliding the Window**: Updates the sum by adding the next element and removing the first element of the previous window.  
 - **Runs in O(n) Time Complexity**: Traverses the array once, making it efficient for large inputs.  
+
+<h4>Longest Repeating Character Replacement</h4>
+<p>
+You are given a string s and an integer k. You can choose any character of the string and change it to any other uppercase English character. You can perform this operation at most k times.
+
+Return the length of the longest substring containing the same letter you can get after performing the above operations.
+
+ 
+
+Example 1:
+
+Input: s = "ABAB", k = 2
+Output: 4
+Explanation: Replace the two 'A's with two 'B's or vice versa.
+Example 2:
+
+Input: s = "AABABBA", k = 1
+Output: 4
+Explanation: Replace the one 'A' in the middle with 'B' and form "AABBBBA".
+The substring "BBBB" has the longest repeating letters, which is 4.
+There may exists other ways to achieve this answer too.
+</p>
+
+<b>Solution Explanation:</b>
+- **Uses Sliding Window Technique**: Expands the right pointer (`r`) while adjusting the left pointer (`l`) to maintain a valid substring.  
+- **Tracks Character Frequency**: Stores character counts in a dictionary (`count`) to determine the most frequent character.  
+- **Ensures Valid Window with At Most `k` Replacements**: Shrinks the window when the number of replacements exceeds `k`.  
+- **Optimized O(n) Solution**: Each character is processed at most twice, making it efficient for large inputs.  
