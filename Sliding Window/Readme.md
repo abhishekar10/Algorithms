@@ -8,8 +8,6 @@ You want to maximize your profit by choosing a single day to buy one stock and c
 
 Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
 
- 
-
 Example 1:
 
 Input: prices = [7,1,5,3,6,4]
@@ -32,8 +30,6 @@ Explanation: In this case, no transactions are done and the max profit = 0.
 <h4>2. Longest substring without repeating characters</h4>
 <p>
 Given a string s, find the length of the longest substring without duplicate characters.
-
- 
 
 Example 1:
 
@@ -65,8 +61,6 @@ You are given an integer array nums consisting of n elements, and an integer k.
 
 Find a contiguous subarray whose length is equal to k that has the maximum average value and return this value. Any answer with a calculation error less than 10-5 will be accepted.
 
- 
-
 Example 1:
 
 Input: nums = [1,12,-5,-6,50,3], k = 4
@@ -90,8 +84,6 @@ You are given a string s and an integer k. You can choose any character of the s
 
 Return the length of the longest substring containing the same letter you can get after performing the above operations.
 
- 
-
 Example 1:
 
 Input: s = "ABAB", k = 2
@@ -111,3 +103,26 @@ There may exists other ways to achieve this answer too.
 - **Tracks Character Frequency**: Stores character counts in a dictionary (`count`) to determine the most frequent character.  
 - **Ensures Valid Window with At Most `k` Replacements**: Shrinks the window when the number of replacements exceeds `k`.  
 - **Optimized O(n) Solution**: Each character is processed at most twice, making it efficient for large inputs.  
+
+<h4>Permutation in String</h4>
+<p>
+Given two strings s1 and s2, return true if s2 contains a permutation of s1, or false otherwise.
+
+In other words, return true if one of s1's permutations is the substring of s2.
+
+Example 1:
+
+Input: s1 = "ab", s2 = "eidbaooo"
+Output: true
+Explanation: s2 contains one permutation of s1 ("ba").
+Example 2:
+
+Input: s1 = "ab", s2 = "eidboaoo"
+Output: false
+</p>
+
+<b>Solution Explanation</b>
+- **Uses Frequency Counting for Character Comparison**: Maintains character counts for `s1` and a sliding window in `s2` using two arrays of size 26 (for lowercase letters).  
+- **Initializes Counts for the First Window**: Computes character frequencies for the first `len(s1)` characters in `s2` to compare against `s1`.  
+- **Sliding Window Optimization**: Updates character counts dynamically by adding the new character from the right (`r`) and removing the leftmost character (`l`).  
+- **Efficient O(n) Approach**: Avoids unnecessary recomputation, ensuring optimal performance for checking permutations.
