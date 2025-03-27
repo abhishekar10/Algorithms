@@ -22,7 +22,7 @@ Explanation: 2 does not exist in nums so return -1
 - **Adjusts Search Range Based on Comparison**: Moves `l` or `r` depending on whether `nums[mid]` is smaller or larger than the target.  
 - **Runs in O(log n) Time Complexity**: Efficient for large sorted arrays due to logarithmic search behavior.
 
-<h4>Search a 2-D Matrix</h4>
+<h4>2. Search a 2-D Matrix</h4>
 <p>
 You are given an m x n integer matrix matrix with the following two properties:
 
@@ -46,3 +46,32 @@ Output: false
 - **Calculates Midpoint Efficiently**: Converts the 1D index to 2D coordinates using `divmod(mid, n)`.  
 - **Adjusts Search Range Based on Comparison**: Moves `left` or `right` depending on whether `matrix[mid_row][mid_col]` is smaller or larger than the target.  
 - **Runs in O(log(m * n)) Time Complexity**: Optimized approach for searching in a sorted matrix.  
+
+<h4>3. Koko eating bananas</h4>
+<p>
+Koko loves to eat bananas. There are n piles of bananas, the ith pile has piles[i] bananas. The guards have gone and will come back in h hours.
+
+Koko can decide her bananas-per-hour eating speed of k. Each hour, she chooses some pile of bananas and eats k bananas from that pile. If the pile has less than k bananas, she eats all of them instead and will not eat any more bananas during this hour.
+
+Koko likes to eat slowly but still wants to finish eating all the bananas before the guards return.
+
+Return the minimum integer k such that she can eat all the bananas within h hours.
+
+Example 1:
+Input: piles = [3,6,7,11], h = 8
+Output: 4
+
+Example 2:
+Input: piles = [30,11,23,4,20], h = 5
+Output: 30
+
+Example 3:
+Input: piles = [30,11,23,4,20], h = 6
+Output: 23
+</p>
+
+<b>Solution Explanation:</b>
+- **Uses Binary Search on Eating Speed**: Searches for the minimum possible eating speed (`k`) within the range `[1, max(piles)]`.  
+- **Calculates Total Hours Needed for a Given Speed**: Iterates through `piles`, using `math.ceil(piles[i] / mid)` to determine the hours taken at speed `mid`.  
+- **Adjusts Search Range Based on Time Constraint**: If the total hours taken is within `h`, reduces the upper bound (`r`), otherwise increases the lower bound (`l`).  
+- **Optimized O(n log max(piles)) Solution**: Efficiently finds the minimum speed while ensuring all bananas are eaten within `h` hours.
