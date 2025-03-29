@@ -108,3 +108,31 @@ Explanation: The original array was [11,13,15,17] and it was rotated 4 times.
 - **Checks Middle Element and Updates Minimum**: Compares `nums[m]` with `res` to keep track of the smallest value found.
 - **Adjusts Search Range Based on Rotation**: Moves `l` right if `nums[m] > nums[r]`, otherwise moves `r` left.
 - **Optimized O(log n) Solution**: Finds the minimum element in logarithmic time using binary search.
+
+<h4>5. Search in Rotated Sorted array</h4>
+<p>
+There is an integer array nums sorted in ascending order (with distinct values).
+
+Prior to being passed to your function, nums is possibly rotated at an unknown pivot index k (1 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2].
+
+Given the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums.
+You must write an algorithm with O(log n) runtime complexity.
+
+Example 1:
+Input: nums = [4,5,6,7,0,1,2], target = 0
+Output: 4
+
+Example 2:
+Input: nums = [4,5,6,7,0,1,2], target = 3
+Output: -1
+
+Example 3:
+Input: nums = [1], target = 0
+Output: -1
+</p>
+
+<b>Soution Explanation</b>
+- **Uses Binary Search on Rotated Sorted Array**: Efficiently searches for `target` in a rotated sorted array.  
+- **Determines Which Half is Sorted**: Compares `nums[m]` with `nums[l]` to identify if the left half is sorted.  
+- **Adjusts Search Range Based on Target Position**: If `target` lies within the sorted half, narrows the search accordingly.  
+- **Optimized O(log n) Solution**: Ensures logarithmic time complexity using binary search principles.
