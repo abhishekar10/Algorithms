@@ -168,3 +168,25 @@ timeMap.get("foo", 5);         // return "bar2"
 - **Uses a HashMap for Fast Lookup**: Stores `key` as the dictionary key and a list of `[value, timestamp]` pairs as the value.  
 - **Binary Search for Efficient Retrieval**: Searches for the largest timestamp ≤ `timestamp` using binary search.  
 - **Optimized O(log n) Get Operation**: Ensures fast retrieval while `set` operates in O(1) time complexity.
+
+<h4>7. Median of Two Sorted Arrays</h4>
+Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+
+The overall run time complexity should be O(log (m+n)).
+
+Example 1:
+Input: nums1 = [1,3], nums2 = [2]
+Output: 2.00000
+Explanation: merged array = [1,2,3] and median is 2.
+
+Example 2:
+Input: nums1 = [1,2], nums2 = [3,4]
+Output: 2.50000
+Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
+
+<b>Solution Explanation :</b>
+- **Finds Median of Two Sorted Arrays in O(log(min(m, n)))**: Uses binary search on the smaller array for efficiency.  
+- **Partitions Both Arrays at Midpoints**: Splits `nums1` and `nums2` to ensure elements on the left are ≤ elements on the right.  
+- **Handles Edge Cases with Inf Bounds**: Uses `float('-inf')` and `float('inf')` to manage empty partitions.  
+- **Checks Correct Partitioning Condition**: Ensures `maxX ≤ minY` and `maxY ≤ minX` before computing the median.  
+- **Handles Odd & Even Length Cases**: Computes the median differently for even and odd total lengths.  
