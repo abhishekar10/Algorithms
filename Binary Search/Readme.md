@@ -75,3 +75,36 @@ Output: 23
 - **Calculates Total Hours Needed for a Given Speed**: Iterates through `piles`, using `math.ceil(piles[i] / mid)` to determine the hours taken at speed `mid`.  
 - **Adjusts Search Range Based on Time Constraint**: If the total hours taken is within `h`, reduces the upper bound (`r`), otherwise increases the lower bound (`l`).  
 - **Optimized O(n log max(piles)) Solution**: Efficiently finds the minimum speed while ensuring all bananas are eaten within `h` hours.
+
+<h4>4. Minimum in rotated sorted array</h4>
+<p>
+Suppose an array of length n sorted in ascending order is rotated between 1 and n times. For example, the array nums = [0,1,2,4,5,6,7] might become:
+
+[4,5,6,7,0,1,2] if it was rotated 4 times.
+[0,1,2,4,5,6,7] if it was rotated 7 times.
+Notice that rotating an array [a[0], a[1], a[2], ..., a[n-1]] 1 time results in the array [a[n-1], a[0], a[1], a[2], ..., a[n-2]].
+Given the sorted rotated array nums of unique elements, return the minimum element of this array.
+You must write an algorithm that runs in O(log n) time.
+
+Example 1:
+Input: nums = [3,4,5,1,2]
+Output: 1
+Explanation: The original array was [1,2,3,4,5] rotated 3 times.
+
+Example 2:
+Input: nums = [4,5,6,7,0,1,2]
+Output: 0
+Explanation: The original array was [0,1,2,4,5,6,7] and it was rotated 4 times.
+
+Example 3:
+Input: nums = [11,13,15,17]
+Output: 11
+Explanation: The original array was [11,13,15,17] and it was rotated 4 times. 
+</p>
+
+<b>Solution Explanation</b>
+- **Uses Binary Search on Rotated Sorted Array**: Searches for the minimum element efficiently using binary search.
+- **Initializes Pointers and a Result Variable**: Uses `l = 0`, `r = len(nums) - 1`, and `res = float(inf)` to track the minimum value.
+- **Checks Middle Element and Updates Minimum**: Compares `nums[m]` with `res` to keep track of the smallest value found.
+- **Adjusts Search Range Based on Rotation**: Moves `l` right if `nums[m] > nums[r]`, otherwise moves `r` left.
+- **Optimized O(log n) Solution**: Finds the minimum element in logarithmic time using binary search.
